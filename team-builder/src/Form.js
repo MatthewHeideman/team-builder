@@ -1,17 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function Form (props) {
+    
     return (
-        <form>
+        <form onSubmit = {props.teamList}>
             <label>
-                <input />
+                <input placeholder = 'Name' value = {props.inputValue.name || ''} type = 'text' name = 'name' onChange = {props.change}/>
             </label>
             <label>
-                <input />
+                <input placeholder = 'E-Mail' value = {props.inputValue.email || ''} type = 'text' name = 'email' onChange = {props.change}/>
             </label>
             <label>
-                <input />
+                <input placeholder = 'Position' value = {props.inputValue.position || ''} type = 'text' name = 'position' onChange = {props.change}/>
+            </label>
+            <label>
+                <input type = 'submit' />
             </label>
         </form>
     )
 }
+export default Form;
